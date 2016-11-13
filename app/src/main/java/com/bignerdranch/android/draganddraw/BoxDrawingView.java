@@ -4,15 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PointF;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class BoxDrawingView extends View {
@@ -83,31 +80,6 @@ public class BoxDrawingView extends View {
             float top = Math.min(box.getOrigin().y, box.getCurrent().y);
             float bottom = Math.max(box.getOrigin().y, box.getCurrent().y);
             canvas.drawRect(left, top, right, bottom, boxPaint);
-        }
-    }
-
-    /**
-     * Obligatory ID in layout for this view!
-     */
-    @Override
-    protected Parcelable onSaveInstanceState() {
-        Parcelable superState = super.onSaveInstanceState();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("boxen", boxen.toArray(new Box[]{}));
-        bundle.putParcelable("super", superState);
-        return bundle;
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Parcelable state) {
-        if (state instanceof Bundle) {
-            Bundle bundle = (Bundle) state;
-            Box[] boxenArray = (Box[]) bundle.getSerializable("boxen");
-            if (boxenArray != null) {
-                boxen.addAll(Arrays.asList(boxenArray));
-            }
-            Parcelable superState = bundle.getParcelable("super");
-            super.onRestoreInstanceState(superState);
         }
     }
 }

@@ -2,9 +2,8 @@
 ### Android app
 Bignerdranch training
 
-#### Exercise in Chapter 29
-- Added save custom view state after screen rotation
+#### Exercises have been done in separate branches
 
 #
 
-[Download apk](../../raw/master/app/build/outputs/apk/app-debug.apk)
+[Download apk (Exercise)](../../raw/master/app/build/outputs/apk/app-debug.apk)
