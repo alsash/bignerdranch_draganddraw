@@ -2,7 +2,8 @@
 ### Android app
 Bignerdranch training
 
-#### Exercises have been done in separate branches
+#### Exercise in Chapter 29
+- Added save custom view state after screen rotation
 
 #
 
